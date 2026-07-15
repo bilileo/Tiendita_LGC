@@ -92,7 +92,7 @@ export default function NotasPage() {
     <div className="container mx-auto mt-10 px-4 max-w-2xl font-sans relative">
       <div className="mb-8 border-b border-slate-200 pb-6">
         <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Notas / Pendientes</h2>
-        <p className="text-slate-500 mt-2 text-sm">Anota aquí todo lo que haya que comprar. Si Fausto ya lo compró, márcalo como completado.</p>
+        <p className="text-slate-500 mt-2 text-sm">Anota aquí todo lo que haya que comprar. Si ya se compró, márcalo como completado.</p>
       </div>
 
       <form onSubmit={handleCrearNota} className="flex gap-2 mb-8">

@@ -144,7 +144,7 @@ useEffect(() => {
           {/* Ajuste text-base sm:text-sm y py-3 para móviles */}
           <input 
             type="text" 
-            placeholder="Buscar al Padrino..." 
+            placeholder="Buscar por nombre..." 
             className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent text-base sm:text-sm text-slate-900 transition-shadow"
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
