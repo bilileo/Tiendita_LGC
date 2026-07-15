@@ -27,7 +27,22 @@ export default function NotasPage() {
   };
 
   useEffect(() => {
+    // 1. Carga inicial inmediata
     cargarNotas();
+
+    // 2. Programar recarga cada 5 segundos
+    const intervalo = setInterval(() => {
+      // Usamos una función silenciosa para no disparar "setCargando(true)"
+      // y evitar que la pantalla parpadee cada 5 segundos
+      obtenerNotas().then(datos => {
+        setNotas(datos);
+      }).catch(err => {
+        console.error("Error actualizando notas en segundo plano:", err);
+      });
+    }, 5000);
+
+    // 3. Limpiar el intervalo al salir del componente
+    return () => clearInterval(intervalo);
   }, []);
 
   const handleCrearNota = async (e: React.FormEvent) => {

@@ -36,8 +36,14 @@ export default function ListaDeudasPage() {
     obtenerDeudas().then(setDeudas);
   };
 
-  useEffect(() => {
+useEffect(() => {
     recargarDeudas();
+
+    const intervalo = setInterval(() => {
+      recargarDeudas();
+    }, 5000);
+
+    return () => clearInterval(intervalo);
   }, []);
 
   const deudasFiltradas = deudas.filter(d => 
